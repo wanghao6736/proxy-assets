@@ -1,0 +1,62 @@
+{
+  "synced_by": {
+    "tool": "proxykit",
+    "commit_at_sync": "6f21669",
+    "note": "commit_at_sync is HEAD when sync ran, not necessarily the commit that built these files"
+  },
+  "generated_at": "2026-09-01T13:29:13+08:00",
+  "counts": {
+    "rules": 12,
+    "overrides": 0
+  },
+  "files": {
+    "mihomo/rules/AIExtra.list": {
+      "sha256_16": "eb84bdc94f5acadd",
+      "lines": 19
+    },
+    "mihomo/rules/AIGC.list": {
+      "sha256_16": "72ce4cfa1f47fad8",
+      "lines": 52
+    },
+    "mihomo/rules/Academic.list": {
+      "sha256_16": "18afa457e86c0242",
+      "lines": 129
+    },
+    "mihomo/rules/AcademicProxy.list": {
+      "sha256_16": "c7defb672daf0ece",
+      "lines": 11
+    },
+    "mihomo/rules/Apple.list": {
+      "sha256_16": "d3ad98e3ac15f56f",
+      "lines": 1593
+    },
+    "mihomo/rules/BanAD.list": {
+      "sha256_16": "2ecd4247c610b534",
+      "lines": 588
+    },
+    "mihomo/rules/China.list": {
+      "sha256_16": "959dae28d76b5e3d",
+      "lines": 111329
+    },
+    "mihomo/rules/ChinaCIDR.list": {
+      "sha256_16": "4730a49c48e02963",
+      "lines": 9665
+    },
+    "mihomo/rules/Dev.list": {
+      "sha256_16": "fe677b39a73252c1",
+      "lines": 18
+    },
+    "mihomo/rules/GlobalMedia.list": {
+      "sha256_16": "cf02ae0c2b516526",
+      "lines": 2263
+    },
+    "mihomo/rules/LAN.list": {
+      "sha256_16": "10290fb05a6a2af5",
+      "lines": 140
+    },
+    "mihomo/rules/Proxy.list": {
+      "sha256_16": "ac83a5f3742d8cae",
+      "lines": 6943
+    }
+  }
+}
