@@ -37,6 +37,13 @@ subs/
 !.github/**/*.yml
 
 # --- local-only scratch ------------------------------------------------------
+# Notes about how this repository is organised -- provenance classes, the URL
+# migration, why icons/ sits at the root. Deliberately not published: the README
+# stays short, and these notes are for whoever maintains the layout, not for
+# whoever fetches a rule set. docs/repo-notes.md is the reorganisation write-up;
+# it is also recoverable from history (it was README.md up to 2adeeef).
+docs/
+
 # JS/Debug/ became quantumult-x/js/Debug/ in the same reorganisation. Its three
 # files were already tracked before the pattern was added, so they stay tracked;
 # the pattern only stops new ones.
