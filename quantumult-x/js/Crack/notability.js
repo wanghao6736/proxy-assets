@@ -6,7 +6,7 @@
 [rewrite_local]
 
 
-^https?:\/\/notability\.com\/subscriptions url script-response-body https://raw.githubusercontent.com/wanghao6736/proxy-assets/quantumult-x/js/Crack/notability.js
+^https?:\/\/notability\.com\/subscriptions url script-response-body https://raw.githubusercontent.com/wanghao6736/proxy-assets/main/quantumult-x/js/Crack/notability.js
 
 [mitm] 
 
