@@ -1,13 +1,13 @@
 {
   "synced_by": {
     "tool": "proxykit",
-    "commit_at_sync": "6f21669",
+    "commit_at_sync": "628b2c9 (dirty)",
     "note": "commit_at_sync is HEAD when sync ran, not necessarily the commit that built these files"
   },
-  "generated_at": "2026-09-01T13:29:13+08:00",
+  "generated_at": "2026-09-01T21:27:30+08:00",
   "counts": {
     "rules": 12,
-    "overrides": 0
+    "overrides": 1
   },
   "files": {
     "mihomo/rules/AIExtra.list": {
@@ -27,7 +27,7 @@
       "lines": 11
     },
     "mihomo/rules/Apple.list": {
-      "sha256_16": "d3ad98e3ac15f56f",
+      "sha256_16": "c68bf03245fa83c6",
       "lines": 1593
     },
     "mihomo/rules/BanAD.list": {
@@ -35,8 +35,8 @@
       "lines": 588
     },
     "mihomo/rules/China.list": {
-      "sha256_16": "959dae28d76b5e3d",
-      "lines": 111329
+      "sha256_16": "fd09b169886705f7",
+      "lines": 111333
     },
     "mihomo/rules/ChinaCIDR.list": {
       "sha256_16": "4730a49c48e02963",
@@ -55,8 +55,12 @@
       "lines": 140
     },
     "mihomo/rules/Proxy.list": {
-      "sha256_16": "ac83a5f3742d8cae",
-      "lines": 6943
+      "sha256_16": "fcc5ba190a7b7a9d",
+      "lines": 6945
+    },
+    "mihomo/overrides/flclash-mini-academic.ready.js": {
+      "sha256_16": "a9e5ac2078df41f7",
+      "lines": 167
     }
   }
 }
