@@ -42,6 +42,7 @@ subs/
 # the pattern only stops new ones.
 quantumult-x/js/Debug/
 .vscode/
+.ipynb_checkpoints/
 .DS_Store
 *.bak
 *.bak-*

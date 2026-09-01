@@ -1,0 +1,17 @@
+#!name = 阿里网盘 token
+#!desc = 阿里网盘 token 获取。详情见仓库
+#!openUrl = http://boxjs.com/#/app/aDriveCheckIn
+#!author = zqzess[https://github.com/zqzess]
+#!homepage = https://github.com/zqzess/rule_for_quantumultX/tree/master/js/Mine/aDriveCheckIn
+#!icon = https://raw.githubusercontent.com/wanghao6736/proxy-assets/main/icons/Color/mini/aliyunpan_128.png
+#!tag = 签到
+#!system = iOS,iPadOS,macOS,tvOS
+#!date = 2025-01-31
+#!version = 0.0.1
+#!system_version = 15
+
+[Script]
+http-request ^https:\/\/(auth|aliyundrive)\.alipan\.com\/v2\/account\/token script-path=https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/js/Mine/aDriveCheckIn/aDriveCheckIn.js, requires-body=true, timeout=10, enabled=true, tag=阿里网盘token获取
+
+[MITM]
+hostname = auth.alipan.com, auth.aliyundrive.com

@@ -1,0 +1,17 @@
+#!name = 京东比价
+#!desc = 进入 APP 商品详情页面触发历史价格，支持版本：App V15.0.80（自行测试）
+#!openUrl = https://github.com/githubdulong
+#!author = githubdulong[https://github.com/githubdulong]
+#!homepage = https://github.com/githubdulong/Script
+#!icon = https://raw.githubusercontent.com/wanghao6736/proxy-assets/main/icons/Color/mini/jd_128.png
+#!tag = 增强,实用工具
+#!system = iOS,iPadOS,macOS,tvOS
+#!date = 2025-03-21
+#!version = 0.0.1
+#!system_version = 15
+
+[Script]
+http-response ^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-path=https://raw.githubusercontent.com/githubdulong/Script/master/jd_price.js, requires-body=true, timeout=30, enabled=true, tag=JD Price History
+
+[MITM]
+hostname = in.m.jd.com

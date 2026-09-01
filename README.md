@@ -11,7 +11,7 @@
 | 目录 | 来源 | 谁维护 | 能不能手工改 |
 |---|---|---|---|
 | `mihomo/` | **生成** —— `proxykit rules build` 的产物 | 同步脚本 | **不能**，下次同步会覆盖 |
-| `quantumult-x/profile`、`rewrite/ForOwnUse.conf`、`rewrite/GetCookie.conf` | **手写自用** | 手工 | 能 |
+| `quantumult-x/profile`、`rewrite/ForOwnUse.conf`、`rewrite/GetCookie.conf`、`loon/plugins/`、`icons/` | **手写自用** | 手工 | 能 |
 | `quantumult-x/` 其余（`js/`、`filter/`、`rewrite/` 的子目录） | **vendored** —— 早年从 [ddgksf2013](https://github.com/ddgksf2013) 等处取的副本 | 无人维护 | 能，但上游有更新的版本 |
 
 `MANIFEST.json` 只覆盖 `mihomo/`，因为只有那部分是算出来的。它是两仓库拆分的代价的解药：
@@ -34,15 +34,24 @@ quantumult-x/
   rewrite/              ForOwnUse.conf（enabled）、GetCookie.conf，及 vendored 子目录
   js/                   脚本，含 Crack/ Task/ Debug/
   filter/               分流规则副本
-  icon/                 图标
+loon/
+  plugins/*.plugin      Loon 插件（手写自用）
+icons/                  图标，**跨内核共用**
+  Color/                含 icon/（512–1024）与 mini/（128）两档尺寸
+  Gallery/Color.json    QX 图标集清单
+  icon_util.ipynb       生成各档尺寸的工具，维护 icons/ 自身
 surge/    …             计划
-loon/     …             计划
 MANIFEST.json           mihomo/ 的溯源
 ```
 
 按**内核**分在第一层，不按 rules / overrides 分：同一个逻辑规则集在不同内核下渲染成不同
 格式，消费方也是按内核取 URL 的；Surge 的模块、QX 的重写这类根本不映射成「rules」的东西
 才有地方放。
+
+`icons/` 是这条规则的**唯一例外**，而且恰恰是这条规则推出来的：QX 的 `img-url=` 与 Loon
+插件的 `icon =` 都取同一批图标。放进任一内核目录，另一个就得跨目录去引 —— 「第一层 = 内核」
+的前提是消费方按内核取 URL，而每个内核都取的东西没有哪个内核可归。`icon_util.ipynb` 跟着
+图标放,因为它维护的就是图标本身,不是产物。
 
 ## 不放什么
 
@@ -78,11 +87,28 @@ CDN 缓存窗口，后者立即生效但每次构建都要改覆写脚本里的 
 改名 + 重组把三样东西同时改了，所以旧 URL 全部失效：
 
 ```
-旧  https://raw.githubusercontent.com/wanghao6736/QuanX/master/Rewrite/ForOwnUse.conf
+旧  https://raw.githubusercontent.com/wanghao6736/proxy-assets/master/Rewrite/ForOwnUse.conf
 新  https://raw.githubusercontent.com/wanghao6736/proxy-assets/main/quantumult-x/rewrite/ForOwnUse.conf
        └ 仓库名              └ 分支            └ 路径
 ```
 
-仓库内 56 处自引用已随重组一并改写（36 个文件），第三方 URL 未动。QX 客户端里存的
-`@ConfigURL` 是**客户端本地状态**，仓库改不到它，需要手工更新一次 —— 见 `master` 分支
-（暂时保留作过渡）。
+重组后树里共 66 处指向本仓库的 URL，分布在 42 个文件，全部已是新地址；第三方 URL 未动。
+
+图标另有一次迁移：它们原先在 `loon` 分支的 `IconSet/`，现在在 `main` 的 `icons/`。
+
+```
+旧  https://raw.githubusercontent.com/wanghao6736/QuanX/loon/IconSet/Color/mini/jd_128.png
+新  https://raw.githubusercontent.com/wanghao6736/proxy-assets/main/icons/Color/mini/jd_128.png
+```
+
+**只剩 `main` 一个分支**：`master`（旧 QX 布局）与 `loon`（Loon 插件与图标）都已合进 main
+并删除,两者的提交都是 main 的祖先,历史没丢。代价是任何写死 `/master/` 或 `/loon/` 的
+旧 URL 会 404 —— 包括 QX 客户端里存的 `@ConfigURL`,那是**客户端本地状态**,仓库改不到它,
+必须手工更新一次:
+
+```
+https://github.com/wanghao6736/proxy-assets/raw/main/quantumult-x/profile/QuantumultX.conf
+```
+
+Loon 插件同理:插件里的 `icon =` 已在仓库内改好,但已安装的插件是客户端本地副本,
+要重新订阅一次才会指向新地址。

@@ -7,7 +7,7 @@
       "addons": "https://raw.githubusercontent.com/wanghao6736/proxy-assets/main/quantumult-x/rewrite/GetCookie.conf, tag=获取 Cookie"
     },
     {
-      "config": "2 0 * * * https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js, tag=阿里云盘签到, img-url=https://github.com/wanghao6736/proxy-assets/raw/main/quantumult-x/icon/Color/AliyunPan.png, enabled=true",
+      "config": "2 0 * * * https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js, tag=阿里云盘签到, img-url=https://github.com/wanghao6736/proxy-assets/raw/main/icons/Color/AliyunPan.png, enabled=true",
       "addons": "https://raw.githubusercontent.com/wanghao6736/proxy-assets/main/quantumult-x/rewrite/GetCookie.conf, tag=获取 Cookie"
     },
     {
